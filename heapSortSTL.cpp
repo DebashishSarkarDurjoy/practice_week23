@@ -6,7 +6,7 @@
 using namespace std;
 
 void sortNumbers(vector<int> &numbers, vector<int> &result) {
-    priority_queue< int > pq(numbers.begin(), numbers.begin() + numbers.size());
+    priority_queue< int, vector<int>, greater<int> > pq(numbers.begin(), numbers.begin() + numbers.size());
 
     while ( !pq.empty() ) {
         int top = pq.top();
@@ -14,7 +14,7 @@ void sortNumbers(vector<int> &numbers, vector<int> &result) {
 
         result.push_back(top);
     }    
-    reverse(result.begin(), result.end());
+    // reverse(result.begin(), result.end());
 }
 
 int main(void) {
